@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freeshop</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body class="has-pattern">
+  <header class="header">
+    <div class='container'>
+      <div class='menu-wrapper d-flex justify-content-between align-items-center py-3'>
+        <a href="/" class="logo me-4">FREESHOP</a>
+        <nav>
+          <ul class='d-flex pl-5'>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="/">Bosh sahifa</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="/">Kategoriya</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="/">Yordam</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="/">Biz haqimizda</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="/">Cart</a>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <div></div>
+          <div></div>
+          <a class='login-button has-animation has-hover' href='/'>Kirish</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='filter-page bg-white'>
+    <div class='banner-content has-bg' style="background-image: url('./images/banner-bg.jpg')">
+      <div class="container">
+          <h1 class='banner-title'>Find cool stuff</h1>
+      </div>
+    </div>
+    <div class='breadcrumb-content'>
+      <div class="container">
+        <ul class='breadcrumb-group'>
+          <li class='breadcrumb-item'><a href="/">Home</a></li>
+          <li class='breadcrumb-item'>Category</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="filter-slide">
+                    <div class="filter-box border-bottom pt-0">
+                        <div class="filter-title">Categories</div>
+                        <div class="filter-body">
+                            <ul class='category-group'>
+                                <li class='category-item'>
+                                  <input type="radio" id="dress1" name="dress">
+                                  <label for="dress1">Dresses</label>
+                                </li>
+                                <li class='category-item'>
+                                  <input type="radio" id="dress2" name="dress">
+                                  <label for="dress2">T-shirt</label>
+                                </li>
+                                <li class='category-item'>
+                                  <input type="radio" id="dress3" name="dress">
+                                  <label for="dress3">Watch</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter-box border-bottom">
+                        <div class="filter-title">Price filter</div>
+                        <div class="filter-body">
+                            <div id="price-range"></div>
+                            <div class="row pt-4">
+                                <div class="col-sm-6">
+                                    <input class='price-value has-border w-100' type="text" value='$100' readOnly/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class='price-value has-border w-100' type="text" value='$3000' readOnly/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box border-bottom">
+                        <div class="filter-title">Size</div>
+                        <div class="filter-body">
+                            <ul class='size-group d-flex flex-wrap'>
+                                <li class='size-item '>
+                                  <input type="radio" name="size" id="size1">
+                                  <label class="has-border" for="size1">XL</label>
+                                </li>
+                                <li class='size-item'>
+                                  <input type="radio" name="size" id="size2">
+                                  <label class="has-border" for="size2">XLL</label>
+                                </li>
+                                <li class='size-item'>
+                                  <input type="radio" name="size" id="size3">
+                                  <label class="has-border" for="size3">XXL</label>
+                                </li>
+                                <li class='size-item'>
+                                  <input type="radio" name="size" id="size4">
+                                  <label class="has-border" for="size4">XLX</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter-box border-bottom">
+                        <div class="filter-title">Colors</div>
+                        <div class="filter-body">
+                            <ul class='color-group'>
+                                <li class='color-item'>
+                                  <input type="radio" id="color1" name="color">
+                                  <label for="color1">White</label>
+                                </li>
+                                <li class='color-item'>
+                                  <input type="radio" id="color2" name="color">
+                                  <label for="color2">Green</label>
+                                </li>
+                                <li class='color-item'>
+                                  <input type="radio" id="color3" name="color">
+                                  <label for="color3">Black</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="filter-title">Top Rated</div>
+                        <div class="filter-body">
+                            <ul class='top-group'>
+                                <li class='top-item border-bottom'>
+                                    <a href="#!">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class='top-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class='top-content'>
+                                                    <div class='top-title'>Casual men wearing cool shoe</div>
+                                                    <span class='top-price'>$250</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class='top-item border-bottom'>
+                                    <a href="#!">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class='top-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class='top-content'>
+                                                    <div class='top-title'>Casual men wearing cool shoe</div>
+                                                    <span class='top-price'>$250</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class='top-item border-bottom'>
+                                    <a href="#!">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class='top-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class='top-content'>
+                                                    <div class='top-title'>Casual men wearing cool shoe</div>
+                                                    <span class='top-price'>$250</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="result-group mb-20 pb-3 border-bottom">
+                    <span>Showing 1–12 of 44 results</span>
+                </div>
+                <div class='product-group'>
+                  <div class="row">
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class='product-item'>
+                        <a href='#!'>
+                          <div class='product-image-wrapper'>
+                            <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                          </div>
+                          <div class='product-title'>Cruise Dual Analog</div>
+                          <span class="product-price">$250.00</span>
+                          <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                        </a>
+                        <div class='product-choice'>
+                          <a href="#!"><img src='./images/basket.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/like.svg' alt=""/></a>
+                          <a href="#!"><img src='./images/comparison.svg' alt=""/></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class='row align-items-center'>
+          <div class="col-md-8">
+            <p>We’re confident we’ve provided all the best for you. Stay connect with us</p>
+          </div>
+          <div class="col-md-4">
+            <div class='social-media-group'>
+              <a class='social-item' href='/'><i class="fab fa-facebook-f"></i></a>
+              <a class='social-item' href='/'><i class="fab fa-twitter"></i></a>
+              <a class='social-item' href='/'><div class="fab fa-telegram-plane"></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'>Information</span>
+              <ul>
+                <li>
+                  <a href='/'>Yetkazish xizmati</a>
+                </li>
+                <li>
+                  <a href='/'>Chegirma</a>
+                </li>
+                <li>
+                  <a href='/'>Mening profilim</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'>Mening profilim</span>
+              <ul>
+                <li>
+                  <a href='/'>Sign In</a>
+                </li>
+                <li>
+                  <a href='/'>View Cart</a>
+                </li>
+                <li>
+                  <a href='/'>My Wishlist</a>
+                </li>
+                <li>
+                  <a href='/'>Check out</a>
+                </li>
+                <li>
+                  <a href='/'>Track My Order</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'> </span>
+              <ul>
+                <li>
+                  <a href='/'>F.A.Q.</a>
+                </li>
+                <li>
+                  <a href='/'>Shipping</a>
+                </li>
+                <li>
+                  <a href='/'>Biz bilan bog’lan</a>
+                </li>
+                <li>
+                  <a href='/'>Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>2021 Barcha huquqlar himoyalangan.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class='accepted-payment'>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+    <script src="./js/library/vendor.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

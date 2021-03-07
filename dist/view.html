@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freeshop</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body class="has-pattern">
+  <header class="header">
+    <div class='container'>
+      <div class='menu-wrapper d-flex justify-content-between align-items-center py-3'>
+        <a href="#!" class="logo me-4">FREESHOP</a>
+        <nav>
+          <ul class='d-flex pl-5'>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="#!">Bosh sahifa</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="#!">Kategoriya</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="#!">Yordam</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="#!">Biz haqimizda</a>
+            </li>
+            <li class='nav-item mx-3'>
+              <a class="has-animation" href="#!">Cart</a>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <div></div>
+          <div></div>
+          <a class='login-button has-animation has-hover' href='#!'>Kirish</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='product-view bg-white'>
+    <div class="product-doc pt-4">
+      <div class='breadcrumb-content'>
+        <div class="container">
+          <ul class='breadcrumb-group'>
+            <li class='breadcrumb-item'><a href="#!">Home</a></li>
+            <li class='breadcrumb-item'>Product</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class='product-slider'>
+                      <div class='swiper-container gallery-group border'>
+                        <div class="swiper-wrapper">
+                          <div class='swiper-slide product-slide has-bg' style="background-image: url('./images/product3.png')"></div>
+                          <div class='swiper-slide product-slide has-bg' style="background-image: url('./images/product3.png')"></div>
+                          </div>
+                      </div>
+                      <div class="swiper-container thumbnail-group">
+                        <div class="swiper-wrapper">
+                          <div class='swiper-slide product-thumbnail has-bg' style="background-image: url('./images/product3.png')"></div>
+                          <div class='swiper-slide product-thumbnail has-bg' style="background-image: url('./images/product3.png')"></div>
+                        </div>
+                        <div class='thumb-nav'>
+                            <button class='has-animation prev-button'><img src="./images/left-arrow.svg" alt=""></button>
+                            <button class='has-animation next-button'><img src="./images/right-arrow.svg" alt=""></button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class='single-product'>
+                      <div class="product-title">This is product name</div>
+                      <div class="product-price">
+                          <span>$250.00</span>
+                          <img src='./images/stars.svg' alt=""/>
+                      </div>
+                      <div class="product-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Aliquam, autem consectetur expedita fuga iure laudantium magni obcaecati quia repellendus tempora.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Aliquam, autem consectetur expedita fuga iure laudantium magni obcaecati quia repellendus tempora.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Aliquam, autem consectetur expedita fuga iure laudantium magni obcaecati quia repellendus tempora.
+                      </div>
+                      <div class="row product-look">
+                          <div class="col-md-4">
+                            <select class="w-100 border" name="size" id="product-size">
+                              <option disabled selected>O'lchamni tanlang</option>
+                              <option value="1">X</option>
+                              <option value="2">XL</option>
+                              <option value="3">XLL</option>
+                              <option value="4">XXLL</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4">
+                            <select class="w-100 border" name="color" id="product-color">
+                              <option disabled selected>Rang tanlang</option>
+                              <option value="1">Black</option>
+                              <option value="2">White</option>
+                              <option value="3">Red</option>
+                              <option value="4">Green</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class='product-status'>
+                          <div class='product-number'>
+                              <button class='has-animation' data-type="-">-</button>
+                              <input value="1" type="text" readonly/>
+                              <button class='has-animation' data-type="+">+</button>
+                          </div>
+                          <div class='d-flex'>
+                              <div class="product-cart has-hover has-animation">
+                                  <img src='./images/korzinka.svg' alt=""/>
+                                  <span>Add to cart</span>
+                              </div>
+                              <div class='product-wishlist has-animation'><img src='./images/wishlist.svg' alt=""/></div>
+                              <div class='product-comparison has-animation'><img src='./images/comparison2.svg' alt=""/></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class='product-tab tab-wrapper'>
+              <ul class='tab-group'>
+                  <li data-tab-id="tab1" class='tab-item active'>Description</li>
+                  <li data-tab-id="tab2" class='tab-item'>Reviews</li>
+              </ul>
+              <div class='content-group'>
+                  <div data-content-id="tab1" class='content-item active'>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci
+                      amet consequuntur debitis delectus dolores ducimus eos facilis laboriosam maxime,
+                      nam nostrum, odit qui quos repellat tempora ut veniam? Blanditiis.
+                  </div>
+                  <div data-content-id="tab2" class='content-item'>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci
+                      nam nostrum, odit qui quos repellat tempora ut veniam? Blanditiis.
+                      amet consequuntur debitis delectus dolores ducimus eos facilis laboriosam maxime,
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class='similar-products padding-top padding-bottom'>
+      <div class="container">
+          <div>
+            <div class="default-title">O'xshash mahsulotlar</div>
+          </div>
+          <div class="position-relative">
+            <div class='swiper-container bestseller-swiper'>
+              <div class="swiper-wrapper">
+                <div class='swiper-slide product-item'>
+                  <a href='/'>
+                    <div class='product-image-wrapper'>
+                      <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                    </div>
+                    <div class='product-title'>Cruise Dual Analog</div>
+                    <span class="product-price">$250.00</span>
+                    <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                  </a>
+                  <div class='product-choice'>
+                    <a href="/"><img src='./images/basket.svg' alt=""/></a>
+                    <a href="/"><img src='./images/like.svg' alt=""/></a>
+                    <a href="/"><img src='./images/comparison.svg' alt=""/></a>
+                  </div>
+                </div>
+                <div class='swiper-slide product-item'>
+                  <a href='/'>
+                    <div class='product-image-wrapper'>
+                      <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                    </div>
+                    <div class='product-title'>Cruise Dual Analog</div>
+                    <span class="product-price">$250.00</span>
+                    <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                  </a>
+                  <div class='product-choice'>
+                    <a href="/"><img src='./images/basket.svg' alt=""/></a>
+                    <a href="/"><img src='./images/like.svg' alt=""/></a>
+                    <a href="/"><img src='./images/comparison.svg' alt=""/></a>
+                  </div>
+                </div>
+                <div class='swiper-slide product-item'>
+                  <a href='/'>
+                    <div class='product-image-wrapper'>
+                      <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                    </div>
+                    <div class='product-title'>Cruise Dual Analog</div>
+                    <span class="product-price">$250.00</span>
+                    <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                  </a>
+                  <div class='product-choice'>
+                    <a href="/"><img src='./images/basket.svg' alt=""/></a>
+                    <a href="/"><img src='./images/like.svg' alt=""/></a>
+                    <a href="/"><img src='./images/comparison.svg' alt=""/></a>
+                  </div>
+                </div>
+                <div class='swiper-slide product-item'>
+                  <a href='/'>
+                    <div class='product-image-wrapper'>
+                      <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                    </div>
+                    <div class='product-title'>Cruise Dual Analog</div>
+                    <span class="product-price">$250.00</span>
+                    <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                  </a>
+                  <div class='product-choice'>
+                    <a href="/"><img src='./images/basket.svg' alt=""/></a>
+                    <a href="/"><img src='./images/like.svg' alt=""/></a>
+                    <a href="/"><img src='./images/comparison.svg' alt=""/></a>
+                  </div>
+                </div>
+                <div class='swiper-slide product-item'>
+                  <a href='/'>
+                    <div class='product-image-wrapper'>
+                      <div class='product-image has-bg' style="background-image: url('./images/man.jpg')"></div>
+                    </div>
+                    <div class='product-title'>Cruise Dual Analog</div>
+                    <span class="product-price">$250.00</span>
+                    <span class='product-rate'><img src='./images/stars.svg' alt=""/></span>
+                  </a>
+                  <div class='product-choice'>
+                    <a href="/"><img src='./images/basket.svg' alt=""/></a>
+                    <a href="/"><img src='./images/like.svg' alt=""/></a>
+                    <a href="/"><img src='./images/comparison.svg' alt=""/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="navigation-group">
+              <button class="swiper-nav swiper-left-button">
+                <img src='./images/left-arrow.svg' alt=""/>
+              </button>
+              <button class="swiper-nav swiper-right-button" >
+                <img src='./images/right-arrow.svg' alt=""/>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class='row align-items-center'>
+          <div class="col-md-8">
+            <p>We’re confident we’ve provided all the best for you. Stay connect with us</p>
+          </div>
+          <div class="col-md-4">
+            <div class='social-media-group'>
+              <a class='social-item' href='/'><i class="fab fa-facebook-f"></i></a>
+              <a class='social-item' href='/'><i class="fab fa-twitter"></i></a>
+              <a class='social-item' href='/'><div class="fab fa-telegram-plane"></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'>Information</span>
+              <ul>
+                <li>
+                  <a href='/'>Yetkazish xizmati</a>
+                </li>
+                <li>
+                  <a href='/'>Chegirma</a>
+                </li>
+                <li>
+                  <a href='/'>Mening profilim</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'>Mening profilim</span>
+              <ul>
+                <li>
+                  <a href='/'>Sign In</a>
+                </li>
+                <li>
+                  <a href='/'>View Cart</a>
+                </li>
+                <li>
+                  <a href='/'>My Wishlist</a>
+                </li>
+                <li>
+                  <a href='/'>Check out</a>
+                </li>
+                <li>
+                  <a href='/'>Track My Order</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class='footer-menu'>
+              <span class='footer-menu-title'> </span>
+              <ul>
+                <li>
+                  <a href='/'>F.A.Q.</a>
+                </li>
+                <li>
+                  <a href='/'>Shipping</a>
+                </li>
+                <li>
+                  <a href='/'>Biz bilan bog’lan</a>
+                </li>
+                <li>
+                  <a href='/'>Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>2021 Barcha huquqlar himoyalangan.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class='accepted-payment'>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                        <img src="#!" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <script src="./js/library/vendor.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
