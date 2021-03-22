@@ -22,7 +22,12 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: #333333;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poppins', sans-serif;
+  padding-top: 58px; }
+
+html.overflowed,
+html.overflowed body {
+  overflow-y: hidden; }
 
 .has-pattern {
   background: url("../images/pattern.png") repeat 0 0;
@@ -152,13 +157,40 @@ a:active {
 .cursor-pointer {
   cursor: pointer; }
 
-#category-menu {
-  top: 100px;
+.mask {
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  transition: opacity 0.1s linear;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden; }
+  .mask.active {
+    opacity: 1;
+    pointer-events: visible;
+    visibility: visible; }
+
+#category-menu {
+  top: 75px;
+  left: 0;
+  width: 100%;
+  position: fixed;
   background-color: #eee;
-  z-index: 3; }
+  z-index: 3;
+  overflow-y: auto;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s linear; }
+  #category-menu.opened {
+    top: 59px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: visible; }
   #category-menu .aside-menu {
     padding: 25px 0;
     width: 400px;
@@ -166,14 +198,33 @@ a:active {
     #category-menu .aside-menu ul {
       width: 200px;
       float: right; }
+      #category-menu .aside-menu ul li.active {
+        background-color: #fff; }
       #category-menu .aside-menu ul a {
         display: block;
         padding: 12px 15px; }
-        #category-menu .aside-menu ul a.active {
-          background-color: #fff; }
   #category-menu .sub-menu {
     flex: 1;
-    padding: 25px 0; }
+    padding: 25px; }
+    #category-menu .sub-menu .submenu-category {
+      display: none; }
+      #category-menu .sub-menu .submenu-category ul {
+        column-count: 3; }
+        #category-menu .sub-menu .submenu-category ul li {
+          break-inside: avoid;
+          margin-bottom: 20px; }
+      #category-menu .sub-menu .submenu-category.show {
+        display: block; }
+    #category-menu .sub-menu .submenu-link {
+      padding: 5px 10px;
+      margin-bottom: 5px; }
+  #category-menu .close-menu {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 36px;
+    cursor: pointer; }
 
 .default-title {
   font-weight: 500;
@@ -183,7 +234,10 @@ a:active {
   margin-bottom: 40px; }
 
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   z-index: 2; }
@@ -206,7 +260,9 @@ header {
           font-size: 14px;
           letter-spacing: 0.4px;
           text-transform: uppercase;
-          padding: 22px 0; }
+          padding: 22px 5px; }
+          header nav > ul > li a.active {
+            color: #1e93ff; }
         header nav > ul > li::after {
           position: absolute;
           content: '';
