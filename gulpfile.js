@@ -23,7 +23,7 @@ const path = {
   js: 'src/js/*.js',
   jsLibrary: 'src/js/library/*',
   images: 'src/images/*',
-  font: 'src/fonts/*'
+  font: 'src/fonts/**/*'
 }
 
 function localServer(cb){
@@ -50,7 +50,6 @@ function handleHTML(){
 
 function handleStyle(){
   return src(path.css)
-    .pipe(changed(path.css))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write('.'))
@@ -59,8 +58,8 @@ function handleStyle(){
 
 function handleCssLibrary(){
   return src(path.cssLibrary, { since: lastRun(handleCssLibrary) })
-    .pipe(changed(path.cssLibrary))
-    .pipe(dest('dist/css/library'));
+    .pipe(concat('vendor.css'))
+    .pipe(dest('dist/css'));
 }
 
 function handleImages(){
@@ -77,7 +76,6 @@ function handleFont(){
 
 function handleJs(){
   return src(path.js)
-    .pipe(changed(path.js))
     .pipe(sourcemaps.init())
     .pipe(babel({
       'presets': ['@babel/preset-env']
@@ -88,22 +86,21 @@ function handleJs(){
 function handleJsLibrary(){
   return src(path.jsLibrary, { since: lastRun(handleJsLibrary) })
     .pipe(concat('vendor.js'))
-    .pipe(dest('dist/js/library'));
+    .pipe(dest('dist/js'));
 }
 
 function watchFiles(){
   watch(
-    [path.images, path.html, path.css, path.cssLibrary, path.js, path.jsLibrary], 
-    parallel(handleImages, handleHTML, handleStyle, handleCssLibrary, handleJs, handleJsLibrary, browserReload)
+    [path.html, path.css, path.js], 
+    series(parallel(handleHTML, handleStyle, handleJs,), browserReload)
   );
+  watch([path.cssLibrary, path.jsLibrary], series(parallel(handleCssLibrary, handleJsLibrary), browserReload));
+  watch([path.images], series(handleImages, browserReload));
+  watch([path.font], series(handleFont, browserReload));
 }
 
-exports.html = handleHTML;
-exports.style = series(handleFont, handleCssLibrary, handleStyle);
-exports.images = handleImages;
-exports.script = handleJs;
-
 exports.serve = series(
+  handleImages,
   handleFont,
   handleHTML,
   handleStyle,
@@ -113,3 +110,9 @@ exports.serve = series(
   localServer,
   watchFiles
 );
+
+function build(cb){
+  cb();
+}
+
+exports.build = build;

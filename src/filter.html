@@ -5,6 +5,7 @@
   <title>Freeshop</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link rel="stylesheet" type="text/css" href="./css/vendor.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body class="has-pattern">
@@ -173,7 +174,12 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="d-md-none col-12">
+              <div class="d-flex justify-content-end mb-4 pb-2 border-bottom">
+                <span class="filter-btn btn bg-default text-white">Filter <i class="ms-1 fas fa-filter"></i></span>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 filter-side">
                 <div class="filter-slide">
                     <div class="filter-box border-bottom pt-0">
                         <div class="filter-title">Categories</div>
@@ -199,10 +205,10 @@
                         <div class="filter-body">
                             <div id="price-range"></div>
                             <div class="row pt-4">
-                                <div class="col-sm-6">
+                                <div class="col-6">
                                     <input class='price-value has-border w-100' type="text" value='$100' readOnly/>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-6">
                                     <input class='price-value has-border w-100' type="text" value='$3000' readOnly/>
                                 </div>
                             </div>
@@ -250,7 +256,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="filter-box">
+                    <div class="filter-box d-lg-block d-none">
                         <div class="filter-title">Top Rated</div>
                         <div class="filter-body">
                             <ul class='top-group'>
@@ -304,13 +310,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-8">
+               <form>
+                 <div class="d-flex mb-4">
+                   <input class="border border-end-0 flex-grow-1 px-3" type="text" placeholder="Search products">
+                   <button type="submit" class="btn bg-default text-white rounded-0 shadow-none px-5">Izla</button>
+                 </div>
+               </form>
                 <div class="result-group mb-20 pb-3 border-bottom">
                     <span>Showing 1–12 of 44 results</span>
                 </div>
                 <div class='product-group'>
                   <div class="row">
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -327,7 +339,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -344,7 +356,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -361,7 +373,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -378,7 +390,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -395,7 +407,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -412,7 +424,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -429,7 +441,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
                       <div class='product-item'>
                         <a href='#!'>
                           <div class='product-image-wrapper'>
@@ -460,7 +472,7 @@
             <p>We’re confident we’ve provided all the best for you. Stay connect with us</p>
           </div>
           <div class="col-md-4">
-            <div class='social-media-group'>
+            <div class='mt-md-0 mt-3 social-media-group d-flex justify-content-md-end justify-content-center'>
               <a class='social-item' href='/'><i class="fab fa-facebook-f"></i></a>
               <a class='social-item' href='/'><i class="fab fa-twitter"></i></a>
               <a class='social-item' href='/'><div class="fab fa-telegram-plane"></div></a>

@@ -71,7 +71,6 @@ tabLinks.forEach(function (link) {
 function handleTabMenu(wrapper, curr) {
   var menus = wrapper.querySelectorAll('[data-tab-id]');
   menus.forEach(function (link) {
-    console.log(link);
     link.classList.remove('active');
   });
   curr.classList.add('active');
@@ -80,9 +79,9 @@ function handleTabMenu(wrapper, curr) {
 function handleTabContent(wrapper, curr) {
   var list = wrapper.querySelectorAll('[data-content-id]');
   list.forEach(function (temp) {
-    temp.classList.remove('fadeIn', 'show');
+    temp.classList.remove('fadeIn', 'show', 'active');
   });
-  curr.classList.add('fadeIn', 'show');
+  curr.classList.add('fadeIn', 'show', 'active');
 }
 
 tabGroup.forEach(function (single) {
@@ -99,11 +98,11 @@ var bestsellerSwiper = new Swiper('.bestseller-swiper', {
     nextEl: '.navigation-group .swiper-right-button'
   },
   breakpoints: {
-    575: {
-      slidesPerView: 2
+    400: {
+      slidesPerView: 1
     },
     991: {
-      slidesPerView: 3
+      slidesPerView: 2
     }
   }
 });
@@ -165,6 +164,34 @@ document.querySelectorAll('.product-number button').forEach(function (button) {
       input.value = val === 1 ? 1 : val - 1;
     }
   });
+});
+document.querySelectorAll('.minus, .plus').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var input = btn.parentNode.querySelector('input');
+    var amount = parseInt(input.value);
+    var singlePrice = parseFloat(btn.closest('tr').querySelector('.single-price').getAttribute('data-price'));
+    var overall = btn.closest('tr').querySelector('.overall-price');
+
+    if (btn.classList.contains('plus')) {
+      amount += 1;
+    } else if (btn.classList.contains('minus')) {
+      amount = amount === 1 ? 1 : amount - 1;
+    }
+
+    input.value = amount;
+    overall.innerHTML = '$' + singlePrice * amount;
+    overall.setAttribute('data-overall', singlePrice * amount);
+  });
+}); //Handle filter
+
+document.querySelector('.filter-btn').addEventListener('click', function () {
+  var filter = document.querySelector('.filter-side');
+
+  if (filter.style.height) {
+    filter.style.height = null;
+  } else {
+    filter.style.height = filter.scrollHeight + 'px';
+  }
 });
 
 function scroller(px) {
