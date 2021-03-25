@@ -106,7 +106,7 @@ body{
   overflow-x: hidden;
   color: $defaultColor;
   font-family: 'Poppins', sans-serif;
-  padding-top: 58px;
+  padding-top: 50px;
 }
 
 html.overflowed,
@@ -345,6 +345,18 @@ a:active{
     cursor: pointer;
   }
 }
+.search-banner{
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear;
+  
+  &.active{
+    pointer-events: visible;
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
 // general style starts
 
@@ -354,6 +366,9 @@ a:active{
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 40px;
+}
+.cursor-pointer{
+  cursor: pointer;
 }
 
 // general style ends
@@ -1400,17 +1415,153 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle{
 
 
 
+//Header only
 
+@media (max-width: 991px){
+  .header nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(0,0,255, 0.8);
+    transition: transform 0.2s;
+    transform: translateX(-100%);
+    padding: 30px 20px;
+    z-index: 2;
+  }
+  .header-tools{
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+  }
+  header nav > ul > li::after{
+    display: none;
+  }
+  .header .menu-link{
+    color: #fff;
+    padding: 5px 0;
+    margin-bottom: 10px;
+  }
+  .header .hamburger{
+    position: relative;
+    height: 3px;
+    width: 30px;
+    background-color: $pinkColor;
+    cursor: pointer;
+    border: 4px solid #fff;
+    box-sizing: content-box;
+  }
+  .header .hamburger::before,
+  .header .hamburger::after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 30px;
+    background-color: $pinkColor;
+    left: 0;
+    top: -7px;
+  }
+  .header .hamburger::after{
+    top: 7px;
+  }
+  .header .close-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    line-height: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .header .header-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.7);
+    z-index: 1;
+    -webkit-transition: opacity var(--time);
+    -o-transition: opacity var(--time);
+    transition: opacity var(--time);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .header.active nav{
+    transform: translateX(0);
+  }
+  .header.active .header-mask{
+    opacity: 1;
+    pointer-events: visible;
+    visibility: visible;
+  }
+}
 
-
-
+@media(max-width: 991px) and (min-width: 768px){
+  #category-menu .aside-menu {
+    width: 300px;
+    max-width: 320px;
+  }
+}
+//Category only
+@media(max-width: 767px){
+  #category-menu.opened {
+    top: 0;
+  }
+  #category-menu .close-menu {
+    right: 20px;
+  }
+  .submenu-category{
+    display: block !important;
+  }
+  #category-menu .sub-menu {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 35px 25px;
+  }
+  #category-menu .sub-menu .submenu-category {
+    overflow-y: visible;
+    max-height: auto;
+  }
+  .category-title{
+    padding: 10px;
+    background: #eee;
+    border: 1px solid #fff;
+    i{
+      transition: transform 0.2s linear;
+    }
+    &.active i{
+      transform: rotate(-180deg);
+    }
+  }
+  .category-list{
+    height: 0;
+    transition: height 0.3s;
+    overflow: hidden;
+  }
+  #category-menu .sub-menu .submenu-category ul {
+    display: flex;
+    flex-direction: column;
+    column-count: 1 !important;
+    overflow-y: auto;
+  }
+  #category-menu .sub-menu .submenu-category ul li {
+    break-inside: auto;
+  }
+}
 
 
 //Responsive
 
 @media (max-width: 767px){
+  .default-title{
+    font-size: 24px;
+  }
   .slider-content {
-    padding: 4rem 0;
+    padding: 6rem 0;
   }
   .slider-content .slider-title{
     font-size: 36px;

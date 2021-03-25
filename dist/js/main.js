@@ -6,7 +6,26 @@ var html = document.querySelector('html');
 var mask = document.querySelector('.mask');
 var catMenu = document.querySelector('#category-menu');
 var headerCategory = document.querySelector('.header-category');
-var closeMenuBtn = document.querySelector('.close-menu');
+var closeMenuBtn = document.querySelector('#category-menu .close-menu');
+var searchBtn = document.querySelectorAll('.search-btn, .search-close');
+var searchBanner = document.querySelector('.search-banner');
+var header = document.querySelector('.header'),
+    headerBtns = document.querySelectorAll('.hamburger, .header-mask, nav .close-menu');
+headerBtns.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    html.classList.toggle('overflowed');
+    header.classList.toggle('active');
+  });
+});
+searchBtn.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    searchBanner.classList.toggle('active');
+
+    if (btn.classList.contains('search-btn')) {
+      searchBanner.querySelector('input').focus();
+    }
+  });
+});
 
 if (buyBtn) {
   buyBtn.addEventListener('click', function () {
@@ -34,20 +53,70 @@ headerCategory.addEventListener('click', function (e) {
   handleCategory();
 });
 mask.addEventListener('click', function () {
-  handleCategory();
+  handleCategory(true);
 });
 closeMenuBtn.addEventListener('click', function () {
-  handleCategory();
+  handleCategory(true);
 });
 
 function handleCategory() {
-  html.classList.toggle('overflowed');
-  mask.classList.toggle('active');
-  catMenu.classList.toggle('opened');
-  headerCategory.classList.toggle('active');
-}
-/* Tab starts */
+  var isRemove = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
+  if (isRemove) {
+    html.classList.remove('overflowed');
+    mask.classList.remove('active');
+    catMenu.classList.remove('opened');
+    headerCategory.classList.remove('active');
+  } else {
+    html.classList.add('overflowed');
+    mask.classList.add('active');
+    catMenu.classList.add('opened');
+    headerCategory.classList.add('active');
+  }
+} //Header Links
+
+
+var menuLink = document.querySelectorAll('.menu-link');
+menuLink.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    if (window.innerWidth < 992) {
+      header.classList.remove('active');
+    }
+  });
+}); //Category Accordion
+
+var accLinks = document.querySelectorAll('.category-title');
+accLinks.forEach(function (accBtn) {
+  accBtn.addEventListener('click', function () {
+    var allLinks = accBtn.closest('.sub-menu').querySelectorAll('.category-title');
+    var currContent = accBtn.closest('.submenu-category').querySelector('.category-list');
+    var allContents = accBtn.closest('.sub-menu').querySelectorAll('.category-list');
+    allLinks.forEach(function (btn) {
+      if (btn != accBtn) {
+        btn.classList.remove('active');
+      }
+    });
+
+    if (accBtn.classList.contains('active')) {
+      accBtn.classList.remove('active');
+    } else {
+      accBtn.classList.add('active');
+    }
+
+    allContents.forEach(function (ct) {
+      if (ct != currContent) {
+        ct.style.height = null;
+      }
+    });
+
+    if (currContent.style.height) {
+      currContent.style.height = null;
+    } else {
+      currContent.style.height = 400 + 'px';
+    }
+  });
+});
+/* Tab starts */
 
 var tabGroup = document.querySelectorAll('.tab-wrapper');
 var tabLinks = document.querySelectorAll('[data-tab-id]');
@@ -184,15 +253,19 @@ document.querySelectorAll('.minus, .plus').forEach(function (btn) {
   });
 }); //Handle filter
 
-document.querySelector('.filter-btn').addEventListener('click', function () {
-  var filter = document.querySelector('.filter-side');
+var filterBtn = document.querySelector('.filter-btn');
 
-  if (filter.style.height) {
-    filter.style.height = null;
-  } else {
-    filter.style.height = filter.scrollHeight + 'px';
-  }
-});
+if (filterBtn) {
+  filterBtn.addEventListener('click', function () {
+    var filter = document.querySelector('.filter-side');
+
+    if (filter.style.height) {
+      filter.style.height = null;
+    } else {
+      filter.style.height = filter.scrollHeight + 'px';
+    }
+  });
+}
 
 function scroller(px) {
   window.scrollTo({

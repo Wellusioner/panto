@@ -4,7 +4,28 @@ const html = document.querySelector('html');
 const mask = document.querySelector('.mask');
 const catMenu = document.querySelector('#category-menu');
 const headerCategory = document.querySelector('.header-category');
-const closeMenuBtn = document.querySelector('.close-menu');
+const closeMenuBtn = document.querySelector('#category-menu .close-menu');
+const searchBtn = document.querySelectorAll('.search-btn, .search-close');
+const searchBanner = document.querySelector('.search-banner');
+const header = document.querySelector('.header'),
+      headerBtns = document.querySelectorAll('.hamburger, .header-mask, nav .close-menu');
+
+headerBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    html.classList.toggle('overflowed');
+    header.classList.toggle('active');
+  });
+});
+
+
+searchBtn.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    searchBanner.classList.toggle('active');
+    if(btn.classList.contains('search-btn')){
+      searchBanner.querySelector('input').focus();
+    }
+  });
+});
 
 if(buyBtn){
   buyBtn.addEventListener('click', function(){
@@ -34,17 +55,71 @@ headerCategory.addEventListener('click', function(e){
   handleCategory();
 });
 mask.addEventListener('click', function(){
-  handleCategory();
+  handleCategory(true);
 });
 closeMenuBtn.addEventListener('click', function(){
-  handleCategory();
+  handleCategory(true);
 });
-function handleCategory(){
-  html.classList.toggle('overflowed');
-  mask.classList.toggle('active');
-  catMenu.classList.toggle('opened');
-  headerCategory.classList.toggle('active');
+function handleCategory(isRemove=false){
+  if(isRemove){
+    html.classList.remove('overflowed');
+    mask.classList.remove('active');
+    catMenu.classList.remove('opened');
+    headerCategory.classList.remove('active');
+  }else{
+    html.classList.add('overflowed');
+    mask.classList.add('active');
+    catMenu.classList.add('opened');
+    headerCategory.classList.add('active');
+  }
 }
+
+//Header Links
+
+const menuLink = document.querySelectorAll('.menu-link');
+
+menuLink.forEach(function(link){
+  link.addEventListener('click', function(e){
+    if(window.innerWidth < 992){
+      header.classList.remove('active');
+    }
+  });
+});
+
+
+//Category Accordion
+  const accLinks = document.querySelectorAll('.category-title');
+  
+	accLinks.forEach(function(accBtn) {
+    accBtn.addEventListener('click', function(){
+      const allLinks = accBtn.closest('.sub-menu').querySelectorAll('.category-title');
+      const currContent = accBtn.closest('.submenu-category').querySelector('.category-list');
+      const allContents = accBtn.closest('.sub-menu').querySelectorAll('.category-list');
+      
+      
+      allLinks.forEach(function(btn){
+        if(btn != accBtn){
+          btn.classList.remove('active');
+        }
+      });
+      if(accBtn.classList.contains('active')){
+        accBtn.classList.remove('active');
+      }else{
+        accBtn.classList.add('active');
+      }
+      
+      allContents.forEach(function(ct){
+        if(ct != currContent){
+          ct.style.height = null;
+        }
+      });
+      if (currContent.style.height) {
+        currContent.style.height = null;
+      } else {
+        currContent.style.height = 400 + 'px';
+      }
+    });	   
+	});
 
 
 /* Tab starts */
@@ -190,15 +265,17 @@ document.querySelectorAll('.minus, .plus').forEach(function (btn){
 });
 
 //Handle filter
-
-document.querySelector('.filter-btn').addEventListener('click', function(){
-  const filter = document.querySelector('.filter-side');
-  if(filter.style.height){
-    filter.style.height = null;
-  }else{
-    filter.style.height = filter.scrollHeight + 'px';
-  }
-});
+const filterBtn = document.querySelector('.filter-btn');
+if(filterBtn){
+  filterBtn.addEventListener('click', function(){
+    const filter = document.querySelector('.filter-side');
+    if(filter.style.height){
+      filter.style.height = null;
+    }else{
+      filter.style.height = filter.scrollHeight + 'px';
+    }
+  }); 
+}
 
 function scroller(px){
   window.scrollTo({

@@ -12,37 +12,47 @@
   <div class="mask"></div>
   <header class="header">
     <div class='container'>
-      <div class='menu-wrapper d-flex justify-content-between align-items-center'>
+      <div class='menu-wrapper d-flex justify-content-between align-items-center position-relative'>
         <a href="/" class="logo me-4">FREESHOP</a>
         <nav>
-          <ul class='d-flex pl-5'>
+          <ul class='d-lg-flex pl-5'>
             <li class='nav-item mx-3'>
-              <a class="main-menu-link has-animation" href="#!">Bosh sahifa</a>
+              <a class="menu-link has-animation" href="#!">Bosh sahifa</a>
             </li>
             <li class='nav-item mx-3'>
-              <a class="has-animation header-category" href="#!">Kategoriya</a>
+              <a class="menu-link has-animation header-category" href="#!">Kategoriya</a>
             </li>
             <li class='nav-item mx-3'>
-              <a class="has-animation" href="#!">Yordam</a>
+              <a class="menu-link has-animation" href="#!">Yordam</a>
             </li>
             <li class='nav-item mx-3'>
-              <a class="has-animation" href="#!">Biz haqimizda</a>
+              <a class="menu-link has-animation" href="#!">Biz haqimizda</a>
             </li>
             <li class='nav-item mx-3'>
-              <a class="has-animation" href="#!">Cart</a>
+              <a class="menu-link has-animation" href="#!">Cart</a>
             </li>
           </ul>
+          <span class="close-menu d-lg-none">&times;</span>
         </nav>
-        <div>
+        <div class="header-tools d-flex align-items-center">
           <div></div>
-          <div></div>
-          <a class='login-button has-animation has-hover' href='#!'>Kirish</a>
+          <div class="ms-3 search-btn cursor-pointer"><i class="fas fa-search"></i></div>
+          <a class='ms-3 login-button has-animation has-hover' href='#!'>Kirish</a>
+          <div class="hamburger d-lg-none ms-4"></div>
         </div>
+        <div class="search-banner position-absolute start-0 top-50 translate-middle-y w-100">
+         <form class="d-flex">
+           <input class="flex-grow-1 px-3 py-2 border" type="text" placeholder="Search products">
+           <button type="submit" class="btn bg-default shadow-none text-white rounded-0" type="submit"><i class="fas fa-search"></i></button>
+           <button type="button" class="search-close btn bg-danger shadow-none text-white rounded-0"><i class="fas fa-times"></i></button>
+         </form>
+       </div>
+       <div class="header-mask"></div>
       </div>
     </div>
   </header>
   <div id="category-menu" class="d-flex tab-wrapper">
-    <div class="aside-menu">
+    <div class="aside-menu d-md-block d-none">
       <ul>
         <li class="active" data-tab-id="1"><a href="#!">Chevrolet</a></li>
         <li data-tab-id="2"><a href="#!">Tesla</a></li>
@@ -51,7 +61,11 @@
     </div>
     <div class="sub-menu bg-white">
       <div class="submenu-category" data-content-id="1">
-        <ul>
+        <div class="category-title d-md-none d-flex justify-content-between">
+          Chevrolet
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="category-list">
           <li >
             <a class="submenu-link d-block fw-bold" href="#!">Машины</a>
             <a class="submenu-link d-block" href="#!">Apple</a>
@@ -86,7 +100,11 @@
         </ul>
       </div>
       <div class="submenu-category" data-content-id="2">
-        <ul>
+        <div class="category-title d-md-none d-flex justify-content-between">
+        Chevrolet
+        <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="category-list">
           <li >
             <a class="submenu-link d-block fw-bold" href="#!">Машины</a>
             <a class="submenu-link d-block" href="#!">Apple</a>
@@ -121,7 +139,11 @@
         </ul>
       </div>
       <div class="submenu-category" data-content-id="3">
-        <ul>
+        <div class="category-title d-md-none d-flex justify-content-between">
+        Chevrolet
+        <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="category-list">
           <li >
             <a class="submenu-link d-block fw-bold" href="#!">Машины</a>
             <a class="submenu-link d-block" href="#!">Apple</a>
