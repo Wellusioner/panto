@@ -24,15 +24,15 @@ const path = {
   jsLibrary: 'src/js/library/*',
   images: 'src/images/*',
   font: 'src/fonts/**/*'
-}
+};
 
 function localServer(cb){
   browsersync.init({
     server: {
       baseDir: 'dist',
-      index: "home.html"
+      index: "index.html"
     },
-    port: 8080
+    port: 5000
   });
   cb();
 }
