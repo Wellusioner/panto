@@ -1,5 +1,7 @@
 const productCategories = document.querySelectorAll('.product-category');
 const header = document.querySelector('header');
+const hamburger = document.querySelector('.hamburger');
+const sidebarCloseBtn = document.querySelector('.sidebar-close');
 
 const productSlider = new Swiper('.product-slider', {
   slidesPerView: 4,
@@ -37,3 +39,10 @@ productCategories.forEach(function (category) {
     category.classList.add('bg-white');
   });
 });
+
+[hamburger, sidebarCloseBtn].forEach(function (item) {
+  item.addEventListener('click', function () {
+    header.classList.toggle('active');
+  })
+})
+

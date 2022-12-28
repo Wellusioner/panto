@@ -2,6 +2,8 @@
 
 var productCategories = document.querySelectorAll('.product-category');
 var header = document.querySelector('header');
+var hamburger = document.querySelector('.hamburger');
+var sidebarCloseBtn = document.querySelector('.sidebar-close');
 var productSlider = new Swiper('.product-slider', {
   slidesPerView: 4,
   spaceBetween: 40,
@@ -33,6 +35,11 @@ productCategories.forEach(function (category) {
       item.classList.remove('bg-white');
     });
     category.classList.add('bg-white');
+  });
+});
+[hamburger, sidebarCloseBtn].forEach(function (item) {
+  item.addEventListener('click', function () {
+    header.classList.toggle('active');
   });
 });
 //# sourceMappingURL=main.js.map

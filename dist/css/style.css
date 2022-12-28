@@ -14815,23 +14815,41 @@ input::placeholder {
 }
 
 @media (max-width: 768px) {
-  .navigation {
+  header .navigation {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    height: 100vh;
-    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: 0.2s linear;
+    transition-delay: 0.2s;
   }
-  .navigation ul li {
-    margin-bottom: 20px;
+  header .navigation ul li {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s linear, transform 0.2s linear;
   }
-  .navigation ul li a {
+  header .navigation ul li a {
     font-size: 36px;
+  }
+  header.active .navigation {
+    opacity: 1;
+    pointer-events: visible;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  header.active .navigation ul li {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
   }
 }
 /*# sourceMappingURL=style.css.map */
