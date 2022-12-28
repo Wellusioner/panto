@@ -6,7 +6,7 @@ const {
   series,
   lastRun 
 }                 = require('gulp'),
-  sass            = require('gulp-sass'),
+  sass            = require('gulp-sass')(require('sass')),
   babel           = require('gulp-babel'),
   sourcemaps      = require('gulp-sourcemaps'),
   browsersync     = require('browser-sync').create(),

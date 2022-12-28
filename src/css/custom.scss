@@ -1,0 +1,191 @@
+//Bootstrap variables can be customized here before importing
+@import "library/bootstrap/functions";
+@import "library/bootstrap/variables";
+
+$input-focus-box-shadow: none !important;
+$form-select-focus-box-shadow: none !important;
+$box-shadow-md: 0 10px 20px rgba(18, 38, 63, 0.0313726);
+$enable-negative-margins: true;
+
+$primary: #E58411;
+//Custom map color
+$main-color: #1E1E1E;
+$custom-colors: (
+  'dark2': $main-color,
+  'primary': $primary,
+  'primary2': #F6B76F,
+  'light2': #F7F7F7,
+  'light3': #EEEEEE,
+  'light4': #FAFAFA,
+  'light6': #8D8D8D,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+//$utilities: () !default;
+//$utilities: map-merge(
+//                $utilities,
+//                (
+//                        "width": (
+//                                responsive: true,
+//                                property: width,
+//                                class: w,
+//                                values: (
+//                                        5: 5%,
+//                                        10: 10%,
+//                                        15: 15%,
+//                                        20: 20%,
+//                                        25: 25%,
+//                                        30: 30%,
+//                                        35: 35%,
+//                                        40: 40%,
+//                                        45: 45%,
+//                                        50: 50%,
+//                                        55: 55%,
+//                                        60: 60%,
+//                                        65: 65%,
+//                                        70: 70%,
+//                                        75: 75%,
+//                                        80: 80%,
+//                                        85: 85%,
+//                                        90: 90%,
+//                                        95: 95%,
+//                                        100: 100%,
+//                                        auto: auto
+//                                )
+//                        ),
+//
+//                )
+//
+//
+//);
+
+@import "library/bootstrap/bootstrap";
+//Bootstrap customization end
+
+//General style start
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6E7E9;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CECED3;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b9b9bd;
+  border-radius: 50px;
+}
+
+iframe {
+  display: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.focus-none:focus,
+.focus-none:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.overflowY-auto {
+  overflow-y: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.has-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.opacity-0 {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    opacity: 0;
+  }
+}
+
+@for $i from 1 through 11 {
+  @each $value in ('top', 'right', 'bottom', 'left') {
+    .padding-#{$value}-#{$i} {
+      padding-#{$value}: #{$i}px;
+    }
+    .margin-#{$value}-#{$i} {
+      margin-#{$value}: #{$i}px;
+    }
+  }
+}
+
+@for $i from 6 through 99 {
+  @each $key, $value in (t: 'top', r: 'right', b: 'bottom', l: 'left') {
+    .p#{$key}-#{$i * 2} {
+      padding-#{$value}: #{$i * 2}px;
+    }
+    .m#{$key}-#{$i * 2} {
+      margin-#{$value}: #{$i * 2}px;
+    }
+  }
+  .px-#{$i * 2} {
+    padding-left: #{$i * 2}px;
+    padding-right: #{$i * 2}px;
+  }
+  .py-#{$i * 2} {
+    padding-top: #{$i * 2}px;
+    padding-bottom: #{$i * 2}px;
+  }
+  .mx-#{$i * 2} {
+    margin-left: #{$i * 2}px;
+    margin-right: #{$i * 2}px;
+  }
+  .my-#{$i * 2} {
+    margin-top: #{$i * 2}px;
+    margin-bottom: #{$i * 2}px;
+  }
+
+  .lh-#{$i} {
+    line-height: #{$i}px;
+  }
+  .fs-#{$i * 2} {
+    font-size: #{$i * 2}px;
+  }
+  .h-#{$i*2} {
+    height: #{$i*2}px;
+  }
+  .w-#{$i*2} {
+    width: #{$i*2}px;
+  }
+}
+
+
+//General style end

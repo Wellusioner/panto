@@ -1,12 +1,94 @@
+@import "fonts.css";
+@import "custom";
+
 body{
   height: 100%;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: sans-serif;
+  color: $main-color;
+  box-sizing: border-box;
+  font-family: 'Gilroy', sans-serif;
+  background-color: #ffffff;
 }
 
 html.overflowed,
 html.overflowed body{
   overflow-y: hidden;
+}
+
+.slider-navigation{
+  pointer-events: none;
+  .slider-btn{
+    pointer-events: visible;
+  }
+}
+
+header{
+  z-index: 10;
+  background-color: rgba(0,0,0, 0);
+  transition: background 0.2s linear;
+
+  &.header-dark{
+    background-color: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+}
+input::placeholder{
+  color: white;
+  letter-spacing: 1px;
+}
+
+.product-category{
+  transition: background-color 0.2s linear;
+}
+
+.testimonial-user::before{
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  right: -36px;
+  top: -3px;
+  border-radius: 50%;
+  box-shadow: -10px 13px 1px -5px #fff;
+}
+
+.testimonial-user::after{
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  left: -36px;
+  top: -3px;
+  border-radius: 50%;
+  box-shadow: 10px 13px 1px -5px #fff;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.6);
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+
+    ul li{
+      margin-bottom: 20px;
+      a{
+        font-size: 36px;
+      }
+    }
+  }
 }
