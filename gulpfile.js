@@ -77,15 +77,17 @@ function handleFont(){
 function handleJs(){
   return src(path.js)
     .pipe(sourcemaps.init())
-    .pipe(babel({
-      'presets': ['@babel/preset-env']
-    }))
+    // .pipe(babel({
+    //   'presets': ['@babel/preset-env']
+    // }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
 function handleJsLibrary(){
   return src(path.jsLibrary, { since: lastRun(handleJsLibrary) })
     .pipe(concat('vendor.js'))
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'));
 }
 

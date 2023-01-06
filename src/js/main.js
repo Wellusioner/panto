@@ -1,8 +1,8 @@
-const html = document.querySelector('html'),
-      productCategories = document.querySelectorAll('.product-category'),
-      header = document.querySelector('header'),
-      hamburger = document.querySelector('.hamburger'),
-      sidebarCloseBtn = document.querySelector('.sidebar-close');
+const html              = document.querySelector('html');
+const productCategories = document.querySelectorAll('.product-category');
+const header            = document.querySelector('header');
+const hamburger         = document.querySelector('.hamburger');
+const sidebarCloseBtn   = document.querySelector('.sidebar-close');
 
 window.addEventListener('scroll', function () {
   if(window.scrollY > 0){
@@ -29,21 +29,37 @@ productCategories.forEach(function (category) {
 });
 
 const productSlider = new Swiper('.product-slider', {
-  slidesPerView: 4,
+  slidesPerView: 1,
   spaceBetween: 40,
   loop: true,
   navigation: {
     nextEl: '.product-section .slider-next',
     prevEl: '.product-section  .slider-prev',
   },
+  breakpoints: {
+    575: {
+      slidesPerView: 2
+    },
+    991: {
+      slidesPerView: 3
+    }
+  }
 });
 
 const testimonialSlider = new Swiper('.testimonial-slider', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 40,
   loop: true,
   navigation: {
     nextEl: '.testimonial-section .slider-next',
     prevEl: '.testimonial-section .slider-prev',
   },
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    },
+    991: {
+      slidesPerView: 3
+    }
+  }
 });
